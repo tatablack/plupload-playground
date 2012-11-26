@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <script type="text/javascript" src="/js/lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="/js/lib/plupload.full.js"></script>
+    <script type="text/javascript" src="/js/Page.js"></script>
+    <script type="text/javascript" src="/js/Uploader.js"></script>
+
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/ext/cssreset-min.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/uploader.css" />
+</head>
+<body>
+    <div id="content">
+        <div id="uploader-strip" data-uploader-count="4">
+        {{ for(var i = 0; i < 6; i++) { }}
+            <div class="uploader-container">
+                <div id="uploader-runtime-{{=i}}"></div>
+
+                <div id="file-picker-{{=i}}" class="uploader-box">
+                    <span class="uploader-label">Voeg foto toe</span>
+                </div>
+
+                <div id="uploader-list-{{=i}}" class="uploader-list"></div>
+            </div>
+        {{ } }}
+        </div>
+    </div>
+</body>

@@ -1,0 +1,5 @@
+# All uploaded files
+uploads/**.*
+
+# Local node modules
+node_modules
