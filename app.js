@@ -18,10 +18,18 @@ app.get('/', function(req, res) {
     res.render('form', { layout: false });
 });
 
+app.get('/plupload1', function(req, res) {
+    res.render('plupload1', { layout: false });
+});
+
+app.get('/plupload2', function(req, res) {
+    res.render('plupload2', { layout: false });
+});
+
 app.post('/upload', function(req, res){
     saveFile(req.files.imageData.path, ImageTypes[req.files.imageData.type]);
 
-    sleep.sleep(4);
+    sleep.sleep(2);
 
     res.setHeader('Content-Type', 'text/plain');
     res.render('success', { layout: false});
@@ -42,4 +50,4 @@ function getSavePath(extension) {
 }
 
 app.listen(PORT);
-console.log('Listening on port ' + PORT);
+console.log('Plupload test server Listening on port ' + PORT);

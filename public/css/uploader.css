@@ -2,11 +2,16 @@ body {
     font-family: Arial,sans-serif;
     font-size: 13px;
     color: #333;
+    margin: 40px auto;
 }
 
-#content {
-    width: 980px;
-    margin: 40px auto;
+iframe {
+    border: 2px solid black;
+    display: block;
+    height: 300px;
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    width: 850px;
 }
 
 .uploader-container {
@@ -14,6 +19,10 @@ body {
     margin-right: 50px;
     max-width: 100px;
     overflow: visible;
+}
+
+.uploader-container:last-child {
+    margin-right: 0;
 }
 
 .uploader-box {

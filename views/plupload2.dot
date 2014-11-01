@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/ext/cssreset-min.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/uploader.css" />
+</head>
+<body>
+    <div id="content">
+        <div id="uploader-strip" data-uploader-count="4">
+        {{ for(var i = 0; i < 4; i++) { }}
+            <div class="uploader-container">
+                <div id="uploader-runtime-{{=i}}"></div>
+
+                <div id="file-picker-{{=i}}" class="uploader-box">
+                    <span class="uploader-label">Voeg foto toe</span>
+                </div>
+
+                <div id="uploader-list-{{=i}}" class="uploader-list"></div>
+            </div>
+        {{ } }}
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/js/lib/lodash.compat.min.js"></script>
+    <script type="text/javascript" src="/js/lib/plupload2/plupload.full.min.js"></script>
+    <script type="text/javascript" src="/js/Uploader2.js"></script>
+
+    <script >
+        $(function() {
+            var uploaderCount = $('#uploader-strip').data('uploaderCount'),
+                runtimes = [ 'html4', 'html5', 'flash', 'silverlight' ],
+                uploaders = [];
+
+            for (var i = 0; i < runtimes.length; i++) {
+                uploaders[i] = new TataBlack.Uploader({
+                    runtime: runtimes[i],
+                    idx: i
+                });
+            }
+        });
+    </script>
+</body>
